@@ -1,0 +1,7 @@
+blink lights in time with music
+
+file format to control when lights are turned on and off
+
+each line in the file will be an event to either turn off or on lights (not both)
+
+
