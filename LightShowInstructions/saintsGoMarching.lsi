@@ -1,30 +1,30 @@
 /home/pi/Downloads/Louis_Armstrong_-_When_The_Saints_Go_Marching_In.mp3
 10
-11    OFF 1 2 3 4
-12    ON  1
-12.3  ON  2
-12.7  ON  3
-13    ON  4
-14    OFF 1 2 3 4
-15.1  ON  1
-15.5  ON  2
-15.8  ON  3 4
-16    OFF 3
-16.05 ON  3
-16.05 OFF 4
-16.1  ON  4
-16.1  OFF 3
-16.15 ON  3
-16.15 OFF 4
-16.2  ON  4
-16.2  OFF 3
-16.25 ON  3
-16.25 OFF 4
-16.30 ON  4
-16.30 OFF 3
-16.35 ON  3
-16.35 OFF 4
-16.4  ON  4
-16.4  OFF 3
-16.5  ON  3
-16.5  OFF 3 4
+21    OFF 1 2 3 4
+22    ON  1
+22.3  ON  2
+22.7  ON  3
+23    ON  4
+24    OFF 1 2 3 4
+25.1  ON  1
+25.5  ON  2
+25.8  ON  3 4
+26    OFF 3
+26.05 ON  3
+26.05 OFF 4
+26.1  ON  4
+26.1  OFF 3
+26.15 ON  3
+26.15 OFF 4
+26.2  ON  4
+26.2  OFF 3
+26.25 ON  3
+26.25 OFF 4
+26.30 ON  4
+26.30 OFF 3
+26.35 ON  3
+26.35 OFF 4
+26.4  ON  4
+26.4  OFF 3
+26.5  ON  3
+26.5  OFF 3 4

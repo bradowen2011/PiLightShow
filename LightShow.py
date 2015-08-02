@@ -1,8 +1,9 @@
-import LightsPower
+# import LightsPower
+import LightsGuiOutput
 import EventParser
 import pygame
-import time
 import argparse
+import time
 
 class LightShow:
     def __init__(self, piLightShowFile, timeOffSet):
@@ -10,7 +11,8 @@ class LightShow:
         self.events = parser.getEvents(timeOffSet)
         self.musicPath = parser.musicPath
         self.startTime = parser.startTime
-        self.lights = LightsPower.PiLights()
+#         self.lights = LightsPower.PiLights()
+        self.lights = LightsGuiOutput.PiLights()
         self.timeOffSet = timeOffSet
 
     def displayEvents(self):
@@ -49,8 +51,9 @@ class LightShow:
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("-l", "--lightShowFile", type = str, help='', 
-                   default='saintsGoMarching.pls')
+                   default='LightShowInstructions/saintsGoMarching.lsi')
     p.add_argument("-t", "--timeToSkip", type = int, help='number of seconds to skip into the song', default=0)
+    p.add_argument("-d", "--display", type = bool, help='display the light strands in a gui - see a light show with out hardware hooked up', default=0)
     args = p.parse_args()
     ls = LightShow(args.lightShowFile, args.timeToSkip)
     ls.playShow()
