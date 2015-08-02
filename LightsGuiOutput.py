@@ -26,7 +26,7 @@ class PiLights(tk.Frame):
             if pinState == 1:
                 label.configure(background="white", foreground="black")
             else:
-                label.configure(background="white", foreground="black")
+                label.configure(background="black", foreground="white")
         print(state, lightStrands)
         self.update()
 
