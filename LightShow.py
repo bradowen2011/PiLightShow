@@ -48,9 +48,11 @@ class LightShow:
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
+    p.add_argument("-l", "--lightShowFile", type = str, help='', 
+                   default='saintsGoMarching.pls')
     p.add_argument("-t", "--timeToSkip", type = int, help='number of seconds to skip into the song', default=0)
     args = p.parse_args()
-    ls = LightShow('saintsGoMarching.pls', args.timeToSkip)
+    ls = LightShow(args.lightShowFile, args.timeToSkip)
     ls.playShow()
     ls.cleanup()
 
