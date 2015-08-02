@@ -23,7 +23,7 @@ class LightShow:
     def startMusic(self):
         pygame.mixer.init()
         pygame.mixer.music.load(self.musicPath)
-        pygame.mixer.music.play(start = int(self.startTime) + self.timeOffSet)
+        pygame.mixer.music.play(start = self.timeOffSet)
 
     def playEvents(self):
         # I observe about a .3 second delay between where i think the song should 
