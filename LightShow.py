@@ -1,4 +1,4 @@
-import LED
+import LightsPower
 import EventParser
 import pygame
 import time
@@ -10,7 +10,7 @@ class LightShow:
         self.events = parser.getEvents(timeOffSet)
         self.musicPath = parser.musicPath
         self.startTime = parser.startTime
-        self.lights = LED.PiLights()
+        self.lights = LightsPower.PiLights()
         self.timeOffSet = timeOffSet
 
     def displayEvents(self):

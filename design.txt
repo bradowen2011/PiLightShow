@@ -1,0 +1,9 @@
+classes needed:
+
+LightsPower - control the interface with the GPIO.
+
+EventParser - reads in a file with light control instructions and creates an array of events
+
+Event - data structure to specify an event - to turn on or off leds, and an array of leds to perform the event on. 
+
+lightShow - the brains - calls eventParser to get the events, starts the music, and starts the light show.

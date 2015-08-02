@@ -1,3 +1,5 @@
+Prefer libraries that come with the the raspbian distribution
+
 blink lights in time with music
 
 file format to control when lights are turned on and off
