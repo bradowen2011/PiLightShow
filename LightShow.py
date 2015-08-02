@@ -12,7 +12,7 @@ class LightShow:
         self.musicPath = parser.musicPath
         self.startTime = parser.startTime
 #         self.lights = LightsPower.PiLights()
-        self.lights = LightsGuiOutput.PiLights()
+        self.lights = LightsGuiOutput.PiLights(4)
         self.timeOffSet = timeOffSet
 
     def displayEvents(self):

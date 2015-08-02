@@ -17,7 +17,7 @@ class PiLights(tk.Frame):
     def cleanup(self):
         pass
 
-    def change(self, state, leds):
+    def change(self, state, lightStrands):
         pinState = 0
         if state.lower() == 'on':
             pinState = 1
@@ -26,6 +26,8 @@ class PiLights(tk.Frame):
                 label.configure(background="white", foreground="black")
             else:
                 label.configure(background="white", foreground="black")
+        print(state, lightStrands)
+        self.root.update()
 
 
 if __name__ == "__main__":
