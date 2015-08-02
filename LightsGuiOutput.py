@@ -23,11 +23,11 @@ class PiLights(tk.Frame):
         if state.lower() == 'on':
             pinState = 1
         for ls in lightStrands:
+            ls = int(ls) - 1 # lists start at zero, we started out list at one
             if pinState == 1:
                 self.labels[ls].configure(background="white", foreground="black")
             else:
                 self.labels[ls].configure(background="black", foreground="white")
-        print(state, lightStrands)
         self.update()
 
 

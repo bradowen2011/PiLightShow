@@ -39,7 +39,7 @@ class LightShow:
             if whenToRun > 0:
                 time.sleep(whenToRun)
             self.lights.change(event.lightState, event.leds)
-            print(event.lightState, event.leds)
+            #print(event.lightState, event.leds)
 
     def playShow(self):
         self.startMusic()
