@@ -13,6 +13,7 @@ class PiLights(tk.Frame):
             self.labels.append(ls)
 
         self.pack(fill="both", expand=True)
+        self.update()
 
     def cleanup(self):
         pass
@@ -27,7 +28,7 @@ class PiLights(tk.Frame):
             else:
                 label.configure(background="white", foreground="black")
         print(state, lightStrands)
-        self.root.update()
+        self.update()
 
 
 if __name__ == "__main__":
