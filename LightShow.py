@@ -11,8 +11,9 @@ class LightShow:
         self.events = parser.getEvents(timeOffSet)
         self.musicPath = parser.musicPath
         self.startTime = parser.startTime
+        self.numberOfLightChannels = int(parser.numberOfLightChannels)
 #         self.lights = LightsPower.PiLights()
-        self.lights = LightsGuiOutput.PiLights(4)
+        self.lights = LightsGuiOutput.PiLights(self.numberOfLightChannels)
         self.timeOffSet = timeOffSet
 
     def displayEvents(self):
@@ -30,7 +31,7 @@ class LightShow:
     def playEvents(self):
         # I observe about a .3 second delay between where i think the song should 
         # be in audacity, with what i hear
-        offset = .3
+        offset = 0 # needs to be .3 for GPIO pins
         startTime = time.time() + offset - self.timeOffSet
         for event in self.events:
             # if positive, we need to wait that amount in seconds
@@ -52,7 +53,7 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("-l", "--lightShowFile", type = str, help='', 
                    default='LightShowInstructions/saintsGoMarching.lsi')
-    p.add_argument("-t", "--timeToSkip", type = int, help='number of seconds to skip into the song', default=0)
+    p.add_argument("-t", "--timeToSkip", type = int, help='number of seconds to skip into the song', default=20)
     p.add_argument("-d", "--display", type = bool, help='display the light strands in a gui - see a light show with out hardware hooked up', default=0)
     args = p.parse_args()
     ls = LightShow(args.lightShowFile, args.timeToSkip)

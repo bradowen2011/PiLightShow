@@ -15,6 +15,7 @@ class EventParser:
         with open(fileName, 'r') as file:
             self.musicPath = file.readline().rstrip()
             self.startTime = file.readline().rstrip()
+            self.numberOfLightChannels = file.readline().rstrip()
             for line in file.read().splitlines():
                 line = line.split()
                 #1st arg is the time stamp, 2nd the light state, and 3rd the light strings to modify
