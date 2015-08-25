@@ -8,7 +8,7 @@ class PiLights(tk.Frame):
         self.labels = []
         
         for lightString in range(lightStrings):
-            ls = tk.Label(self, text="  string " + str(lightString) + "  ", background="black", foreground="white")
+            ls = tk.Label(self, text="  string " + str(lightString + 1) + "  ", background="black", foreground="white")
             ls.pack(side="left", fill="both", expand=True)
             self.labels.append(ls)
 
