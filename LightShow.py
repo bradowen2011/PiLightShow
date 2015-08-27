@@ -27,7 +27,6 @@ class LightShow:
             print('leds to modify:', event.leds)
 
     def startMusic(self):
-
         pygame.mixer.music.play(start = self.timeOffSet)
 
     def playEvents(self):
