@@ -9,6 +9,7 @@
 import pygame
 import time
 import argparse
+import Events
 
 class Recorder:
     def __init__(self, musicPath, timeOffSet):
@@ -22,12 +23,21 @@ class Recorder:
 
     def recordEvents(self):
         startTime = time.time() - self.timeOffSet
+        LightEvents = []
         while pygame.mixer.music.get_busy():
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
-                    print(time.time() - startTime, "ON", event.key)
+                    lightState = " ON  "
                 elif event.type == pygame.KEYUP:
-                    print(time.time() - startTime, "OFF", event.key)
+                    lightState = " OFF "
+                else:
+                    # we didn't catch an event we care about
+                    break
+                LightEvents.append("{0:.2f}".format(time.time() - startTime) + lightState + str(event.key) + "\n")
+
+        with open('myfile','w') as outfile:
+            for event in LightEvents:
+                outfile.write(event)
         
     def startRecording(self):
         self.startMusic()
@@ -38,7 +48,7 @@ class Recorder:
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
-    p.add_argument("-l", "--musicPath", type = str, help='', 
+    p.add_argument("-m", "--musicPath", type = str, help='', 
                    default='Music/Six_White_Boomers_-_A_Rolf_Harris_Tribute.mp3')
     p.add_argument("-t", "--timeToSkip", type = int, help='number of seconds to skip into the song', default=0)
     p.add_argument("-d", "--display", type = bool, help='display the light strands in a gui - see a light show with out hardware hooked up', default=0)
