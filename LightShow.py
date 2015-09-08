@@ -1,4 +1,4 @@
-# import LightsPower
+import LightsPower
 import LightsGuiOutput
 import EventParser
 import pygame
@@ -7,24 +7,19 @@ import time
 
 class LightShow:
     def __init__(self, piLightShowFile, timeOffSet):
-        parser = EventParser.EventParser(piLightShowFile)
+        self.parser = EventParser.EventParser(piLightShowFile)
+        # This is so pyreverse can generate the uml - probably an easier way to do this
+        parser = self.parser 
         self.events = parser.getEvents(timeOffSet)
         self.musicPath = parser.musicPath
         self.startTime = parser.startTime
         self.numberOfLightChannels = int(parser.numberOfLightChannels)
-#         self.lights = LightsPower.PiLights()
-        self.lights = LightsGuiOutput.PiLights(self.numberOfLightChannels)
+        self.lights = LightsPower.LightsPower()
+        #self.lights = LightsGuiOutput.LightsGuiOutput(self.numberOfLightChannels)
         self.timeOffSet = timeOffSet
         
         pygame.mixer.init()
         pygame.mixer.music.load(self.musicPath)
-
-    def displayEvents(self):
-        for event in self.events:
-            print('**********************')
-            print('time stamp:', event.timeStamp)
-            print('light state:', event.lightState)
-            print('leds to modify:', event.leds)
 
     def startMusic(self):
         pygame.mixer.music.play(start = self.timeOffSet)

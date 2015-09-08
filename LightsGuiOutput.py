@@ -1,6 +1,6 @@
 import tkinter as tk
 
-class PiLights(tk.Frame):
+class LightsGuiOutput(tk.Frame):
     def __init__(self, lightStrings):
         self.root = tk.Tk()
         tk.Frame.__init__(self, self.root)
@@ -30,9 +30,3 @@ class PiLights(tk.Frame):
                 self.labels[ls].configure(background="black", foreground="white")
         self.update()
 
-
-if __name__ == "__main__":
-    pl = PiLights()
-    #pl.flashAll(10, .1)
-    pl.circleChase(10, .1)
-    pl.cleanup()

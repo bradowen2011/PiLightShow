@@ -12,6 +12,8 @@ import Events
 
 class EventParser:
     def __init__(self, fileName):
+        # this line is so pyreverse can generate the uml
+        self.event = Events.Events(1,2,3)
         self.events = []
         with open(fileName, 'r') as file:
             self.musicPath = file.readline().rstrip()
@@ -20,7 +22,6 @@ class EventParser:
             for line in file.read().splitlines():
                 line = line.split()
                 #1st arg is the time stamp, 2nd the light state, and 3rd the light strings to modify
-                #print(line)
                 self.events.append(Events.Events(line[0], line[1], line[2:]))
 
     def applyOffSet(self, timeOffSet):
